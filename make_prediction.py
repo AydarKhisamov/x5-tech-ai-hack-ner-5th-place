@@ -4,7 +4,7 @@ import torch
 from transformers import AutoModelForTokenClassification, AutoTokenizer
 from utils import get_tokens, id2tag, predictions_to_entities
 
-model_checkpoint = '.../checkpoint-****'
+model_checkpoint = '.../results/checkpoint-****'
 model = AutoModelForTokenClassification.from_pretrained(model_checkpoint)
 
 # инициализация процессора для вычислений
