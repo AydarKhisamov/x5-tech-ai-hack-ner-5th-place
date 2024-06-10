@@ -19,7 +19,7 @@ if torch.cuda.is_available():
     torch.cuda.manual_seed_all(seed)
 set_seed(seed)
 
-with open('data/train.json', 'r') as f:
+with open('.../train.json', 'r') as f:
     train_data = json.load(f)
 
 # словарь с датасетом
@@ -145,7 +145,7 @@ def compute_metrics(p):
 
 
 training_args = TrainingArguments(
-    output_dir='./results',
+    output_dir='.../results',
     evaluation_strategy='epoch',
     learning_rate=2e-5,
     per_device_train_batch_size=8,
