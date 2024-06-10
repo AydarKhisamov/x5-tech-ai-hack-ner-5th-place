@@ -4,7 +4,7 @@ import torch
 from transformers import AutoModelForTokenClassification, AutoTokenizer
 from utils import get_tokens, id2tag, predictions_to_entities
 
-model_checkpoint = './results/checkpoint-595'
+model_checkpoint = '.../checkpoint-****'
 model = AutoModelForTokenClassification.from_pretrained(model_checkpoint)
 
 # инициализация процессора для вычислений
@@ -18,7 +18,7 @@ model.to(device)
 
 tokenizer = AutoTokenizer.from_pretrained(model_checkpoint)
 
-with open('data/test.json', 'r') as file:
+with open('.../test.json', 'r') as file:
     test_data = json.load(file)
 
 # сохранение предсказаний для тестовой выборки
@@ -61,6 +61,6 @@ for example in test_data:
     predictions_output.append({'text': text, 'entities': entities})
 
 # сохранение предсказаний в файле JSON с кодировкой UTF-8
-output_file = 'data/submission.json'
+output_file = '.../submission.json'
 with open(output_file, 'w', encoding='utf-8') as file:
     json.dump(predictions_output, file, ensure_ascii=False, indent=4)
